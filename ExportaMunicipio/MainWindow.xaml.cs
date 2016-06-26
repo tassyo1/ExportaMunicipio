@@ -12,17 +12,44 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ExportaMunicipio.Model;
+
 
 namespace ExportaMunicipio
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Contexto db = new Contexto();
+            var lista = db.Estados.OrderBy(uf => uf.Sigla);
+            IList<UF> ufs = lista.ToList();
+            
+            comboBox.DisplayMemberPath ="Sigla";
+            comboBox.SelectedValuePath = "ID";
+            comboBox.ItemsSource = ufs;
+            
+        }
+
+        private void btnSalvar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAlterar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnExcluir_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

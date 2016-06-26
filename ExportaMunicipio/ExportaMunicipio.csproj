@@ -83,7 +83,12 @@
     <Compile Include="Migrations\201606262138459_CriaUsuario.Designer.cs">
       <DependentUpon>201606262138459_CriaUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606262309543_CriaMunicipio.cs" />
+    <Compile Include="Migrations\201606262309543_CriaMunicipio.Designer.cs">
+      <DependentUpon>201606262309543_CriaMunicipio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Municipio.cs" />
     <Compile Include="Model\UF.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -100,6 +105,9 @@
     </Compile>
     <EmbeddedResource Include="Migrations\201606262138459_CriaUsuario.resx">
       <DependentUpon>201606262138459_CriaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606262309543_CriaMunicipio.resx">
+      <DependentUpon>201606262309543_CriaMunicipio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

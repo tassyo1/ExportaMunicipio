@@ -10,5 +10,6 @@ namespace ExportaMunicipio
     class Contexto :DbContext
     {
         public DbSet<UF> Estados { get; set; }
+        public DbSet<Municipio> Municipios { get; set; }
     }
 }
