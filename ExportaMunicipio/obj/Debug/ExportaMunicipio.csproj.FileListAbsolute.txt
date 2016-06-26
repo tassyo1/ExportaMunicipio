@@ -1,0 +1,14 @@
+f:\documentos\visual studio 2015\Projects\ExportaMunicipio\ExportaMunicipio\bin\Debug\ExportaMunicipio.exe.config
+f:\documentos\visual studio 2015\Projects\ExportaMunicipio\ExportaMunicipio\bin\Debug\ExportaMunicipio.exe
+f:\documentos\visual studio 2015\Projects\ExportaMunicipio\ExportaMunicipio\bin\Debug\ExportaMunicipio.pdb
+f:\documentos\visual studio 2015\Projects\ExportaMunicipio\ExportaMunicipio\obj\Debug\ExportaMunicipio.csprojResolveAssemblyReference.cache
+f:\documentos\visual studio 2015\Projects\ExportaMunicipio\ExportaMunicipio\obj\Debug\MainWindow.g.cs
+f:\documentos\visual studio 2015\Projects\ExportaMunicipio\ExportaMunicipio\obj\Debug\App.g.cs
+f:\documentos\visual studio 2015\Projects\ExportaMunicipio\ExportaMunicipio\obj\Debug\ExportaMunicipio_MarkupCompile.cache
+f:\documentos\visual studio 2015\Projects\ExportaMunicipio\ExportaMunicipio\obj\Debug\ExportaMunicipio_MarkupCompile.lref
+f:\documentos\visual studio 2015\Projects\ExportaMunicipio\ExportaMunicipio\obj\Debug\MainWindow.baml
+f:\documentos\visual studio 2015\Projects\ExportaMunicipio\ExportaMunicipio\obj\Debug\ExportaMunicipio.g.resources
+f:\documentos\visual studio 2015\Projects\ExportaMunicipio\ExportaMunicipio\obj\Debug\ExportaMunicipio.Properties.Resources.resources
+f:\documentos\visual studio 2015\Projects\ExportaMunicipio\ExportaMunicipio\obj\Debug\ExportaMunicipio.csproj.GenerateResource.Cache
+f:\documentos\visual studio 2015\Projects\ExportaMunicipio\ExportaMunicipio\obj\Debug\ExportaMunicipio.exe
+f:\documentos\visual studio 2015\Projects\ExportaMunicipio\ExportaMunicipio\obj\Debug\ExportaMunicipio.pdb
