@@ -39,7 +39,18 @@ namespace ExportaMunicipio
 
         private void btnSalvar_Click(object sender, RoutedEventArgs e)
         {
+            Contexto db = new Contexto();
+            Municipio m = new Municipio()
+            {
+                Nome = textBox.Text,
+                ufID = Convert.ToInt32(comboBox.SelectedValue)
+            };
+            db.Municipios.Add(m);
+            db.SaveChanges();
 
+            MessageBox.Show("Município adicionado!");
+            textBox.Text = "";
+            db.Dispose();
         }
 
         private void btnAlterar_Click(object sender, RoutedEventArgs e)
@@ -48,6 +59,11 @@ namespace ExportaMunicipio
         }
 
         private void btnExcluir_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

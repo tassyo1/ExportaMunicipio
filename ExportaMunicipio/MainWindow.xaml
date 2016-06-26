@@ -13,18 +13,18 @@
         </Grid.ColumnDefinitions>
         <ComboBox x:Name="comboBox" 
                   Text="Selecione uma UF" HorizontalAlignment="Left" Margin="5,26,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1" Height="22" SelectionChanged="comboBox_SelectionChanged"/>
-        <DataGrid x:Name="dataGridMunicipios" HorizontalAlignment="Left" Margin="5,115,0,0" VerticalAlignment="Top" Height="197" Width="395" Grid.Column="1">
+        <DataGrid x:Name="dataGridMunicipios" HorizontalAlignment="Left" Margin="5,115,0,0" VerticalAlignment="Top" Height="197" Width="401" Grid.Column="1">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Municípios"/>
             </DataGrid.Columns>
         </DataGrid>
         <Label x:Name="labelTotal" Content="Total:" HorizontalAlignment="Left" Margin="256,310,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.674,-0.325" Grid.Column="1" Height="26" Width="38"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="5,82,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-        <Button x:Name="btnSalvar" Content="Salvar" HorizontalAlignment="Left" Margin="145,85,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Height="20" Click="btnSalvar_Click"/>
-        <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="325,85,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Height="20" Click="btnExcluir_Click"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="7,82,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="399" Grid.Column="1"/>
+        <Button x:Name="btnSalvar" Content="Salvar" HorizontalAlignment="Left" Margin="175,52,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Height="20" Click="btnSalvar_Click"/>
+        <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="331,52,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Height="20" Click="btnExcluir_Click"/>
         <Label x:Name="label1" Content="UF" HorizontalAlignment="Left" Margin="4,4,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="24"/>
         <Label x:Name="label2" Content="Insira um novo município" HorizontalAlignment="Left" Margin="4,60,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.55,0.489" Grid.Column="1" Height="26" Width="144"/>
-        <Button x:Name="btnAlterar" Content="Alterar" HorizontalAlignment="Left" Margin="234,85,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Height="20" Click="btnAlterar_Click"/>
+        <Button x:Name="btnAlterar" Content="Alterar" HorizontalAlignment="Left" Margin="253,52,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Height="20" Click="btnAlterar_Click"/>
 
     </Grid>
 </Window>
