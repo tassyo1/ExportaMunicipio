@@ -60,7 +60,25 @@ namespace ExportaMunicipio
 
         private void btnExcluir_Click(object sender, RoutedEventArgs e)
         {
+            if (dataGridMunicipios.SelectedCells.Count() > 0)
+            {
+                Contexto db = new Contexto();
+                IList<Municipio> listaMunicipio = new List<Municipio>();
 
+                var itensSelecao = dataGridMunicipios.SelectedItems;
+
+                foreach (var c in itensSelecao)
+                {
+                    Municipio m = (Municipio)c;
+                    listaMunicipio.Add(db.Municipios.Find(m.ID)); 
+                }
+
+                db.Municipios.RemoveRange(listaMunicipio);
+
+                db.SaveChanges();
+                MessageBox.Show("Município excluído!");
+                db.Dispose();
+            }
         }
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -79,5 +97,7 @@ namespace ExportaMunicipio
 
             }
         }
+
+        
     }
 }
