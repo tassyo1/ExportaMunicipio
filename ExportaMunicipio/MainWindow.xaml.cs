@@ -13,11 +13,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ExportaMunicipio.Model;
-
+using ExportaMunicipio.DAO;
 
 namespace ExportaMunicipio
 {
-    
+
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -30,11 +30,11 @@ namespace ExportaMunicipio
             Contexto db = new Contexto();
             var lista = db.Estados.OrderBy(uf => uf.Sigla);
             IList<UF> ufs = lista.ToList();
-            
-            comboBox.DisplayMemberPath ="Sigla";
+
+            comboBox.DisplayMemberPath = "Sigla";
             comboBox.SelectedValuePath = "ID";
             comboBox.ItemsSource = ufs;
-            
+
         }
 
         private void btnSalvar_Click(object sender, RoutedEventArgs e)
@@ -51,6 +51,8 @@ namespace ExportaMunicipio
             MessageBox.Show("Município adicionado!");
             textBox.Text = "";
             db.Dispose();
+
+            preencheGrid();
         }
 
         private void btnAlterar_Click(object sender, RoutedEventArgs e)
@@ -70,7 +72,7 @@ namespace ExportaMunicipio
                 foreach (var c in itensSelecao)
                 {
                     Municipio m = (Municipio)c;
-                    listaMunicipio.Add(db.Municipios.Find(m.ID)); 
+                    listaMunicipio.Add(db.Municipios.Find(m.ID));
                 }
 
                 db.Municipios.RemoveRange(listaMunicipio);
@@ -78,6 +80,8 @@ namespace ExportaMunicipio
                 db.SaveChanges();
                 MessageBox.Show("Município excluído!");
                 db.Dispose();
+
+                preencheGrid();
             }
         }
 
@@ -85,19 +89,25 @@ namespace ExportaMunicipio
         {
             if (comboBox.HasItems)
             {
-                Contexto db = new Contexto();
-
-                UF uf = db.Estados.Find(Convert.ToInt32(comboBox.SelectedValue));
-
-                var busca = from m in db.Municipios where m.ufID == uf.ID
-                                              orderby m.Nome select m;
-
-                IList<Municipio> lista = busca.ToList();
-                this.dataGridMunicipios.ItemsSource = lista;
-
+                preencheGrid();
             }
         }
 
-        
+        private void preencheGrid()
+        {
+            MunicipioDAO dao = new MunicipioDAO();
+
+            IList<Municipio> lista = dao.MunicipiosPorUF(Convert.ToInt32(comboBox.SelectedValue));
+
+            this.dataGridMunicipios.ItemsSource = lista;
+
+            preencheTotal();
+        }
+    
+        private void preencheTotal()
+        {
+            string s = this.labelTotal.Content.ToString();
+            this.labelTotal.Content =s  + this.dataGridMunicipios.Items.Count.ToString();
+        }
     }
 }
