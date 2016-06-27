@@ -39,20 +39,23 @@ namespace ExportaMunicipio
 
         private void btnSalvar_Click(object sender, RoutedEventArgs e)
         {
-            Contexto db = new Contexto();
-            Municipio m = new Municipio()
+            if (this.textBox.Text != "")
             {
-                Nome = textBox.Text,
-                ufID = Convert.ToInt32(comboBox.SelectedValue)
-            };
-            db.Municipios.Add(m);
-            db.SaveChanges();
+                Contexto db = new Contexto();
+                Municipio m = new Municipio()
+                {
+                    Nome = textBox.Text,
+                    ufID = Convert.ToInt32(comboBox.SelectedValue)
+                };
+                db.Municipios.Add(m);
+                db.SaveChanges();
 
-            MessageBox.Show("Município adicionado!");
-            textBox.Text = "";
-            db.Dispose();
+                MessageBox.Show("Município adicionado!");
+                textBox.Text = "";
+                db.Dispose();
 
-            preencheGrid();
+                preencheGrid();
+            }
         }
 
         private void btnAlterar_Click(object sender, RoutedEventArgs e)
@@ -106,8 +109,7 @@ namespace ExportaMunicipio
     
         private void preencheTotal()
         {
-            string s = this.labelTotal.Content.ToString();
-            this.labelTotal.Content =s  + this.dataGridMunicipios.Items.Count.ToString();
+            this.labelT.Content =this.dataGridMunicipios.Items.Count.ToString();
         }
     }
 }
