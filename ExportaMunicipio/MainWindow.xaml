@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExportaMunicipio"
         mc:Ignorable="d"
-        Title="Exporta Dados" Height="376.393" Width="427.459" Loaded="Window_Loaded">
+        Title="Cadastro de Município" Height="376.393" Width="427.459" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
@@ -13,9 +13,9 @@
         </Grid.ColumnDefinitions>
         <ComboBox x:Name="comboBox" 
                   Text="Selecione uma UF" HorizontalAlignment="Left" Margin="5,26,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1" Height="22" SelectionChanged="comboBox_SelectionChanged"/>
-        <DataGrid x:Name="dataGridMunicipios" HorizontalAlignment="Left" Margin="5,115,0,0" VerticalAlignment="Top" Height="197" Width="401" Grid.Column="1">
+        <DataGrid x:Name="dataGridMunicipios" SelectionUnit="FullRow" HorizontalAlignment="Left" Margin="5,115,0,0" VerticalAlignment="Top" Height="197" Width="401" Grid.Column="1" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Municípios"/>
+                <DataGridTextColumn ClipboardContentBinding="{x:Null}" Header="Municipios" Width="393" Binding="{Binding Nome}"/>
             </DataGrid.Columns>
         </DataGrid>
         <Label x:Name="labelTotal" Content="Total:" HorizontalAlignment="Left" Margin="256,310,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.674,-0.325" Grid.Column="1" Height="26" Width="38"/>

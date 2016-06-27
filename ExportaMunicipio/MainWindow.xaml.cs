@@ -65,7 +65,19 @@ namespace ExportaMunicipio
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (comboBox.HasItems)
+            {
+                Contexto db = new Contexto();
 
+                UF uf = db.Estados.Find(Convert.ToInt32(comboBox.SelectedValue));
+
+                var busca = from m in db.Municipios where m.ufID == uf.ID
+                                              orderby m.Nome select m;
+
+                IList<Municipio> lista = busca.ToList();
+                this.dataGridMunicipios.ItemsSource = lista;
+
+            }
         }
     }
 }
